@@ -1,0 +1,79 @@
+.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    direction: rtl;
+    width: 50%;
+    background-color: rgb(6 68 155);
+    margin: auto;
+    /* height: 100vh; */
+    border: black 11px solid;
+}
+
+.mobile>* {
+    width: 100%;
+}
+
+/* -------------------- header ------------------- */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    width: 130px !important;
+}
+
+.header>* {
+    width: 30%;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+}
+
+/* -------------------- details ------------------- */
+
+.details {
+    margin-top: 10px;
+}
+
+.details>* {
+    margin: 5px;
+}
+
+h4 {
+    font-size: 13px;
+}
+
+.num {
+    text-align: center;
+    width: 46%;
+}
+
+.plusminus {
+    background-color: #0068f8;
+    width: 25%;
+    color: white;
+}
+
+.pairs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2px;
+}
+
+.pairs>* {
+    margin: 8px;
+}
+
+/* -------------------- action ------------------- */
+
+.actions>* {
+    background-color: #0068f8;
+    width: 30%;
+    margin: 8px
+}

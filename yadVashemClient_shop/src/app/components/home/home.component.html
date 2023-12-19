@@ -1,0 +1,42 @@
+<div class="mobile">
+
+    <div class="header">
+        <div>
+            <mat-icon>home</mat-icon>
+            <mat-icon>accessible</mat-icon>
+        </div>
+        <img class="logo" src="../../../assets/logoFull.webp">
+        <div>
+            <span>english </span>
+            <span>עברית </span>
+        </div>
+    </div>
+
+    <div class="details">
+        <h1>כניסה למוזיאון</h1>
+        <h3 >נא מלא את הפרטים הדרושים ולחץ המשך</h3>
+        <h4>הכניסה למוזיאון אינה כרוכה בתשלום(כניסה לבד ללא הדרכה)</h4>
+        <h2>פרטי הסיור</h2>
+        <div class="pairs">
+            <div>מספר מבקרים:</div>
+            <div>
+                <button class="plusminus" (click)="handleMinus()" [disabled]="value<1">-</button>
+                <input  class="num" value="0" [(ngModel)]="value" />
+                <button class="plusminus" (click)="handlePlus()" >+</button>
+            </div>
+        </div>
+        <div class="pairs">
+            <div> תאריך:  {{date | date:"EEEE M/d/yy"}} </div> <span>|</span> <div> כרטיסים שנותרו:  {{sumAvPlace}}</div>
+        </div>
+    </div>
+
+
+    <div class="hours">
+        <app-hours [numOfPeople]="value" (hourChoose)="chooseHour($event)"></app-hours>
+    </div>
+
+    <div class="actions">
+        <button mat-raised-button>חזרה</button>
+        <button mat-raised-button [disabled]="!hourbuy" (click)="openDialog()">המשך</button>
+    </div>
+</div>

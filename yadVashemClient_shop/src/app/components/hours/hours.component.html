@@ -1,0 +1,33 @@
+<div class="option">
+    <label>שעת התחלה: </label>
+    <mat-radio-group [(ngModel)]="partsOfTheDay" (ngModelChange)="partsOfTheDayChange(partsOfTheDay)">
+        <mat-radio-button value="1">בוקר</mat-radio-button>
+        <mat-radio-button value="2">צהריים</mat-radio-button>
+        <mat-radio-button value="3">ערב</mat-radio-button>
+    </mat-radio-group>
+</div>
+
+<div class="panel">
+    <button mat-raised-button *ngFor="let hour of hoursList; let i = index" (click)="chekHour(hour,i) "
+        [style.background]="i==checkedHour?'#0068f8':'inherit'" 
+        [disabled]="hour.availablePlaces < 1 || hour.isClosed|| hour.availablePlaces-numOfPeople<0">
+        <div>{{hour.startTime}}</div>
+        <div class="disabled" *ngIf="hour.isClosed">סגור</div>
+        <div class="disabled" *ngIf="hour.availablePlaces < 1 && !hour.isClosed">אזלו</div>
+        <div class="abled" *ngIf="hour.availablePlaces > 0 && !hour.isClosed">
+            {{hour.availablePlaces}} כרטיסים
+        </div>
+        
+    </button>
+
+    <!-- ה disabled שלו לא עובד:() -->
+    <!-- <mat-card *ngFor="let hour of hoursList; let i = index" (click)="chekHour(hour,i)"
+        [disabled]="hour.availablePlaces < 1 || hour.isClosed">
+        <span>{{hour.startTime}}</span>
+        <span class="disabled" *ngIf="hour.isClosed">סגור</span>
+        <span class="disabled" *ngIf="hour.availablePlaces < 1 && !hour.isClosed">אזלו</span>
+        <span class="abled" *ngIf="hour.availablePlaces > 0 && !hour.isClosed">
+            {{hour.availablePlaces}} כרטיסים
+        </span>
+    </mat-card> -->
+</div>
